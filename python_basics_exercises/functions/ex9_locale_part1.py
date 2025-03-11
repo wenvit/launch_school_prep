@@ -1,0 +1,31 @@
+##### Problem statement
+
+# Write a function that extracts the language code from a locale. 
+# A locale is a combination of a language code, a region, and 
+# usually also a character set, e.g en_US.UTF-8.
+
+# print(extract_language('en_US.UTF-8'))      # en
+# print(extract_language('en_GB.UTF-8'))      # en
+# print(extract_language('ko_KR.UTF-16'))     # ko
+
+##### Solution
+
+# One way using slicing: assumes code is always at the beginning
+# of the string and is always 2 characters long
+
+# def extract_language(locale):
+#     return code[:2] 
+
+# print(extract_language('en_US.UTF-8'))      # en
+# print(extract_language('en_GB.UTF-8'))      # en
+# print(extract_language('ko_KR.UTF-16'))     # ko
+
+# Launch School solution, which is nice because it accommodates
+# longer codes
+
+def extract_language(locale):
+    return locale.split('_')[0]
+
+print(extract_language('en_US.UTF-8'))      # en
+print(extract_language('en_GB.UTF-8'))      # en
+print(extract_language('ko_KR.UTF-16'))     # ko
